@@ -1,0 +1,93 @@
+import type { BlogPost } from "./types";
+import { images } from "./images";
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: "everest-base-camp-packing-list",
+    title: "The Complete Everest Base Camp Packing List",
+    excerpt:
+      "Everything you need for two weeks in the Khumbu — and the ten things trekkers always bring but never use.",
+    date: "2026-01-12",
+    author: "Pemba Sherpa",
+    image: images.blogPacking,
+    content: [
+      "Packing for Everest Base Camp is a balancing act. Porters carry a maximum of 15 kg of your gear, temperatures swing from t-shirt warmth in Phakding to -15°C nights in Gorak Shep, and everything you forget costs three times more in Namche Bazaar.",
+      "## The layering system",
+      "Forget one heavy jacket — think three layers. A merino or synthetic base layer wicks sweat on the climbs. A fleece or light down mid-layer keeps you warm at rest stops. A down jacket (rated to at least -10°C) and a waterproof shell handle everything the mountains throw at you above Dingboche.",
+      "## Footwear: the one thing not to compromise",
+      "Broken-in, waterproof trekking boots with ankle support are non-negotiable. Pair them with quality trekking socks (four pairs) and bring camp shoes or sandals for teahouse evenings — your feet will thank you.",
+      "## Sleeping",
+      "Teahouses provide blankets, but above 4,000 m you want a four-season sleeping bag rated to -15°C comfort. We provide a complimentary duffel bag; a silk liner adds warmth and keeps the bag clean.",
+      "## The small things that matter most",
+      "Water purification (tablets or a filter bottle) saves money and plastic. Sunscreen SPF 50 and lip balm — the UV at altitude is fierce. A headlamp for pre-dawn Kala Patthar. Wet wipes, hand sanitiser, and a power bank, since charging costs money in lodges.",
+      "## What to leave behind",
+      "Jeans, cotton hoodies, more than two books, a laptop, drones (permits are complex), and heavy DSLR kits unless photography is the point of your trip. Every gram matters on the hill to Namche.",
+      "Still unsure? Every Himalayan Horizons trek includes a pre-departure gear check in Kathmandu, and anything missing can be bought or rented in Thamel the evening before you fly.",
+    ],
+  },
+  {
+    slug: "best-time-to-trek-in-nepal",
+    title: "When Is the Best Time to Trek in Nepal?",
+    excerpt:
+      "Autumn, spring, monsoon or winter? A season-by-season honest guide to Himalayan weather.",
+    date: "2026-02-03",
+    author: "Anisha Gurung",
+    image: images.blogSeason,
+    content: [
+      "The short answer: October–November and March–May. The longer answer is more interesting, because every season opens different doors in Nepal.",
+      "## Autumn (October–November): the classic",
+      "Post-monsoon skies are at their clearest, temperatures are comfortable, and every trail is open. This is peak season — book flights and lodges early, and expect company on the Everest and Annapurna trails. For solitude, choose Manaslu or Langtang.",
+      "## Spring (March–May): rhododendrons and warm nights",
+      "The hills below 3,000 m blaze with rhododendron bloom, days grow warmer, and this is climbing season — Island Peak and the expedition world come alive. Haze can build in the lowlands by May, but views above 3,500 m stay superb.",
+      "## Winter (December–February): cold, clear and quiet",
+      "Skies are often the clearest of the year. Lower treks — Everest View, Ghorepani, Langtang — are excellent, with empty trails and crisp panoramas. High passes like Thorong La and Larkya La can close after snowfall, so keep itineraries flexible.",
+      "## Monsoon (June–September): the secret season",
+      "Most of Nepal is wet and leech-prone, but the rain-shadow regions — Upper Mustang and Dolpo — are at their finest. Cultural tours in Kathmandu and Tibet overland trips also run well. Bring a good umbrella and a sense of humour for the drive days.",
+      "Whatever your dates, there is a right trek for the season — tell us when you can travel and we will match the route to the month, not the other way round.",
+    ],
+  },
+  {
+    slug: "altitude-sickness-prevention-guide",
+    title: "Altitude Sickness: A Trekker's Prevention Guide",
+    excerpt:
+      "AMS is the most common reason trekkers turn back. Here is how our guides keep you climbing safely.",
+    date: "2026-03-18",
+    author: "Dr. Kiran Shrestha (advisor)",
+    image: images.blogAltitude,
+    content: [
+      "Acute Mountain Sickness (AMS) can affect anyone above about 2,500 m, regardless of age or fitness. It is not a weakness — it is physiology. The good news: it is almost entirely manageable with the right itinerary and honest self-reporting.",
+      "## Know the symptoms",
+      "Early AMS feels like a hangover: headache, poor appetite, disturbed sleep, fatigue. These are signals to hold your altitude, not push on. Severe symptoms — confusion, breathlessness at rest, loss of coordination — demand immediate descent. Our guides are trained to spot them and act.",
+      "## The golden rules",
+      "Above 3,000 m, sleep no more than 500 m higher than the night before, and build in a rest day every 1,000 m of gain. Climb high, sleep low. Drink 3–4 litres a day. Avoid alcohol until you are descending. Never ascend with worsening symptoms.",
+      "## How our itineraries are built",
+      "Every Himalayan Horizons high-altitude trek includes dedicated acclimatisation days — Namche and Dingboche on the EBC route, Manang on the Annapurna Circuit. Guides carry pulse oximeters and record your oxygen saturation each evening; a downward trend triggers a rest day before symptoms escalate.",
+      "## About Diamox",
+      "Acetazolamide (Diamox) speeds acclimatisation and is widely used at 125–250 mg twice daily, started the day before reaching 3,000 m. It is a prevention aid, not a cure — discuss it with your doctor before travel, and never use it to mask symptoms while ascending.",
+      "## Insurance matters",
+      "Ensure your policy explicitly covers trekking to your itinerary's maximum altitude and helicopter evacuation. In the Khumbu, a rescue flight can exceed USD 5,000 — this is not the place to discover an exclusion clause.",
+    ],
+  },
+  {
+    slug: "nepal-trekking-permits-explained",
+    title: "Nepal Trekking Permits Explained (2026 Update)",
+    excerpt:
+      "TIMS, national parks, restricted areas — what you need, what it costs, and what we arrange for you.",
+    date: "2026-04-07",
+    author: "Pemba Sherpa",
+    image: images.blogPermits,
+    content: [
+      "Nepal's permit system confuses almost every first-time trekker. Here is the current landscape in plain language. (All fees below are per person and subject to change by the authorities.)",
+      "## TIMS card",
+      "The Trekkers' Information Management System card (NPR 2,000 for foreigners) is required on most open trekking routes and is now issued only through registered trekking agencies, alongside the guide requirement introduced in 2023. We arrange it with one passport photo and a scan of your passport.",
+      "## National park and conservation fees",
+      "Each protected area charges an entry fee: Sagarmatha National Park (NPR 3,000) plus the Khumbu Pasang Lhamu municipality fee (NPR 2,000) for Everest treks; the Annapurna Conservation Area Permit or ACAP (NPR 3,000) for Annapurna routes; Langtang National Park (NPR 3,000); Chitwan National Park (NPR 2,000 per day).",
+      "## Restricted area permits",
+      "Border regions require special permits, a minimum group size of two trekkers and a registered guide. Upper Mustang and Upper Dolpo cost USD 500 for the first 10 days. Manaslu costs USD 100/week in autumn (USD 75/week off-season) plus MCAP and ACAP. These permits can only be issued through an agency — this is where we do the paperwork so you don't have to.",
+      "## Climbing permits",
+      "NMA trekking peaks such as Island Peak and Mera Peak carry seasonal royalty fees (USD 250 in spring, USD 125 in autumn for Group B peaks), plus a refundable garbage deposit.",
+      "## What you actually need to do",
+      "For any Himalayan Horizons trip: send us a passport scan and one digital photo at booking. Every permit listed on your trip's 'Includes' section is obtained by our operations team before you arrive. Carry your passport on trek — checkpoints do verify.",
+    ],
+  },
+];
