@@ -24,5 +24,5 @@ export const site = {
     "NMA (Nepal Mountaineering Association)",
     "KEEP (Kathmandu Environmental Education Project)",
   ],
-  licenseNo: "Govt. Regd. No. 84512/065/066",
+  licenseNo: "Govt. Regd. No. 84512/065/066 (demo)",
 } as const;

@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
+import Analytics from "@/components/Analytics";
 import { site } from "@/data";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -32,6 +33,7 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <Footer />
         <StickyCTA />
+        <Analytics />
       </body>
     </html>
   );

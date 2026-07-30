@@ -79,7 +79,8 @@ export interface BlogPost {
 export interface Testimonial {
   name: string;
   country: string;
-  trip: string;
+  trip: string; // display name
+  tripSlug: string; // matches Trip.slug — used for reliable lookups
   rating: number;
   text: string;
 }

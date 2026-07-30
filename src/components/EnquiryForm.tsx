@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Loader2, Send } from "lucide-react";
+import { Loader2, RefreshCw, Send } from "lucide-react";
 
 type Status = "idle" | "sending" | "sent" | "error";
+type ErrorKind = "network" | "server";
 
 export default function EnquiryForm({
   tripName,
@@ -16,6 +17,7 @@ export default function EnquiryForm({
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const [errorKind, setErrorKind] = useState<ErrorKind>("server");
 
   const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -23,19 +25,35 @@ export default function EnquiryForm({
     setError("");
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
+
+    let res: Response;
     try {
-      const res = await fetch("/api/enquiry", {
+      res = await fetch("/api/enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...data, trip: tripSlug ?? data.trip ?? "" }),
       });
+    } catch {
+      setStatus("error");
+      setErrorKind("network");
+      setError("Connection problem — check your internet and try again.");
+      return;
+    }
+
+    try {
       const json = await res.json();
-      if (!res.ok) throw new Error(json.error || "Something went wrong.");
+      if (!res.ok) {
+        setStatus("error");
+        setErrorKind("server");
+        setError(json.error || "Something went wrong. Please try again.");
+        return;
+      }
       setStatus("sent");
       form.reset();
-    } catch (err) {
+    } catch {
       setStatus("error");
-      setError(err instanceof Error ? err.message : "Something went wrong.");
+      setErrorKind("server");
+      setError("Unexpected response from server. Please try again.");
     }
   };
 
@@ -71,10 +89,15 @@ export default function EnquiryForm({
         placeholder={tripName ? `Questions about ${tripName}…` : "Tell us about your trip plans…"}
         className="input-field"
       />
-      {status === "error" && <p className="text-sm text-red-600">{error}</p>}
+      {status === "error" && (
+        <p className="flex items-center gap-1.5 text-sm text-red-600">
+          {errorKind === "network" && <RefreshCw size={14} className="shrink-0" />}
+          {error}
+        </p>
+      )}
       <button type="submit" disabled={status === "sending"} className="btn-primary w-full disabled:opacity-60">
         {status === "sending" ? <Loader2 size={16} className="animate-spin" /> : <Send size={16} />}
-        {status === "sending" ? "Sending…" : "Send Enquiry"}
+        {status === "sending" ? "Sending…" : status === "error" ? "Try Again" : "Send Enquiry"}
       </button>
       <p className="text-center text-xs text-slate-400">No payment required — free, no-obligation reply.</p>
     </form>
